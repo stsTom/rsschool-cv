@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<!--
+  - border-radius to make image rounded
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Stsiapan Tamilau CV</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+  </head>
+  
+  <body>
+    <header class="cv-header">
+      <img src="images/photo_2026-09-13_23-50-29.jpg" class="portfolio-img" alt="portfolio portrait">
+      <div class="general-info-block">
+        <div class="top-info">
+          <h1>Stsiapan Tamilau</h1>
+          <div>
+            <h2>Business Management student at WSB Merito</h2>
+            <small>Wroc&lstrok;aw, Poland</small>
+          </div>
+        </div>
+
+        <div class="contacts">
+          <span>
+            email: <strong>stsiapantamilau@gmail.com</strong>
+          </span>
+          <span>
+            gitHub: <a href="https://github.com/stsTom">stsTom</a>
+          </span>
+        </div>
+
+        <nav>
+          <a href="#summary-section">Summary</a>
+          <a href="#experience-section">Experience</a>
+          <a href="#projects-section">Projects</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="split-container">
+      <section class="main-info-section">
+        <div class="Summary" id="summary-section">
+          <h2>Summmary</h2>
+          
+          <p>
+            Currently pursuing my degree at WSB Merito,
+            I combine software development skills across React/TypeScript and GDScript
+            with experience in startup environments and solo project development.
+            I am driven to master every stage of the developer path &mdash;
+            from core implementation and testing to architecture desig&#x442; &mdash; 
+            with the clear goal of evolving into a technical manager
+            who deeply understands the stack and team workflow.
+          </p>
+        </div>
+          
+        <hr>
+
+        <div class="experience" id="experience-section">
+          <h2>Experience</h2>
+          <!--Here is the list of worth checking projects I'd ever been working on
+          alongside descriptions of relevant skills gained/used,
+          and some code samples-->
+
+          <div>
+            <h3>Front-end developer</h3>
+            <small>React, TypeScript, TailwindCSS, ShadcnUI</small>
+
+            <ul>
+              <li>
+                <strong>Creating a data-driven UI.</strong>
+                Implemented content rendering based on external configuration files (TS),
+                ensuring easy scalability and project maintenance.
+              </li>
+
+              <li>
+                <strong>App&apos;s state management via global storage and contexts.</strong>
+                Handled a complex application state,
+                allowing different elements to access it while maintaining code readability
+                and synchronization with the back-end.
+              </li>
+
+              <li>
+                <strong>Writing tests according to the testing pyramid.</strong>
+                Ensured predictable application behavior through writing unit, integration, and E2E tests
+              </li>
+            </ul>
+          </div>
+
+          <br>
+
+          <div>
+            <h3>AI Engineer</h3>
+            <small>BMAD Method, OpenSpec + Claude Code</small>
+
+            <ul>
+              <li>
+                <strong>AI-Assisted Development.</strong>
+                Implemented an AI-driven workflow utilizing Claude Code and BMAD
+                to automate architecture planning and task breakdown,
+                accelerating the discovery-to-execution pipeline.
+              </li>
+
+              <li>
+                <strong>Spec-Driven Development.</strong>
+                Leveraged OpenSpec alongside Claude Code for spec-based code generation,
+                ensuring precise implementation alignment with project requirements.
+              </li>
+
+              <li>
+                <strong>Prompt Engineering &amp; Workflow Optimization.</strong>
+                Applied multi-model LLMs (Claude, Gemini) for rapid brainstorming,
+                prompt design, and streamlining daily technical tasks.
+              </li>
+            </ul>
+          </div>
+
+          <br>
+
+          <div>
+            <h3>Technical designer, GDSctipt developer</h3>
+            <small>Godot Engine, GDScript, High-level multiplayer API</small>
+
+            <ul>
+              <li>
+                <strong>Prototyping game mechanics.</strong>
+                Implemented a set of core mechanics
+                using object-oriented programming (OOP) principles in GDScript.
+              </li>
+
+              <li>
+                <strong>Creating a dedicated server.</strong>
+                Developed server logic in GDScript,
+                optimizing resource consumption and ensuring stable state synchronization.
+              </li>
+
+              <li>
+                <strong>Developing Client-Server Interaction.</strong>
+                Designed and implemented a data exchange system for multi-user interaction
+                using RPC
+              </li>
+            </ul>
+          </div>
+        </div>
+
+          <hr>
+
+        <div class="projects">
+          <h2>Projects</h2>
+
+          <div class="projects-container" id="projects-section">
+            <div>
+              <h3>Challenger</h3>
+              <small><em>React + Next.js + TypeScript</em></small>
+              <small>Junior Front-end Developer</small>
+              <a href="https://github.com/apyrkh/challenger">Link</a>
+            </div>
+
+            <div>
+              <h3>Swagger Editor</h3>
+              <small><em>React + TailwindCSS (course final project)</em></small>
+              <small>Teamleader, Editor functionality</small>
+              <a href="https://swagger-editor-nx8kosg0b-sttfs-projects-236fba54.vercel.app/">Deployment</a>
+            </div>
+            
+            <div>
+              <h3>Focus Messenger</h3>
+              <small><em>BMAD, OpenSpec + Claude Code</em></small>
+              <small>AI Engineer</small>
+              <a href="">There was supposed to be a link, but the repo is private at the moment</a>
+            </div>
+
+            <div>
+              <h3>Demo project</h3>
+              <small><em>React + TailwindCSS</em></small>
+              <small>A simple hobby project</small>
+              <a href="https://github.com/stsTom/Press_Kit_Demo">Link</a>
+            </div>
+          </div>
+
+
+          <h3>Code samples</h3>
+          <ul>
+            <li><details>
+              <summary>Understanding of the React principles</summary>
+              <pre><code class="language-javascript">
+useEffect(() => {
+    setIsLoading(true);
+    challengeService
+      .getChallenges()
+      .then((dataPromise) => {
+        if (dataPromise.data.length === 0) {
+          setIsChallengesEmpty(true);
+          return;
+        }
+
+        setIsChallengesEmpty(false);
+        setChallenges(dataPromise.data);
+      })
+      .catch((err) => {
+        setError(err.message || getText(&quot;challenges.fetch.unknownError&quot;));
+      })
+      .finally(() => setIsLoading(false));
+  }, []);
+              </code></pre>
+            </details></li>
+
+            <li><details>
+              <summary>Testing skills</summary>
+              <pre><code class="language-javascript">
+describe(&apos;Swagger editor utilities&apos;, () =&gt; {
+  beforeEach(() => {
+    mockValidate.mockReset();
+  });
+
+  describe(&apos;convertFormat&apos;, () =&gt; {
+    it(&apos;converts JSON text to YAML text&apos;, () =&gt; {
+              const result = convertFormat(&apos;{&quot;openapi&quot;:&quot;3.0.0&quot;}&apos;, &apos;yaml&apos;);
+
+      expect(result).toContain('openapi: 3.0.0');
+    });
+              </code></pre>
+            </details></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="additional-info-section">
+        <div class="education">
+          <h2>Education</h2>
+
+          <ul>
+            <li>
+              <h3>Business management student at WSB Merito</h3>
+              <small>Batchelor degree</small>
+            </li>
+          </ul>
+        </div>
+
+        <hr>
+
+        <div class="courses">
+          <h2>Relevant Certifications</h2>
+
+          <ul>
+            <li>
+              Certificated at React 2026 Q2 at RS School
+            </li>
+
+            <li>
+              Participated at NodeJS 2026 Q1 at RS School
+            </li>
+          </ul>
+
+          <h3>Other Certificates</h3>
+          <ul>
+            <li>
+              Erasmus+ Youth Exchange &quot;Making ourselves at home&quot;, organized by Kreisau Initiative e.V., 2022
+            </li>
+            
+            <li>
+              Euroweek - Szko&lstrok;a Lider&oacute;w, 2022
+            </li>
+          </ul>
+        </div>
+
+        <hr>
+
+        <div class="skills">
+          <h2>Skills</h2>
+
+          <div>
+            <h3>Hard Skills</h3>
+
+            <ul>
+              <li>
+                Component-based programming
+              </li>
+              
+              <li>
+                Object-oriented programming
+              </li>
+
+              <li>
+                Using Frontend Stack at a Basic Level (React, TypeScript, JavaScript, NextJS)
+              </li>
+
+              <li>
+                Basic understanding of back-end technologies: REST API, Dockerization
+              </li>
+
+              <li>
+                State Management libraries: Zustand, TanStack Query
+              </li>
+
+              <li>
+                Testing tools: RTL, Vitest
+              </li>
+
+              <li>
+                Tools &amp; Environment: Git, GitHub, Vite, npm, VS Code.
+              </li>
+            </ul>
+          </div>
+
+          <h3>Soft skills</h3>
+
+          <ul>
+            <li>
+              Engineering mindset
+            </li>
+
+            <li>
+              Self-management skills
+            </li>
+
+            <li>
+              Interest in learning and self-education
+            </li>
+
+            <li>
+              Adaptability and fast learning
+            </li>
+
+            <li>
+              Strong problem-solving attitude
+            </li>
+          </ul>
+        </div>
+
+        <hr>
+
+        <div class="languages">
+          <h2>Languages</h2>
+
+          <ul>
+            <li>English - B2+ (fluent)</li>
+
+            <li>Polish - B2 (communicative)</li>
+
+            <li>Russian - Native</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <div class="footer-container">
+        <a href="https://rs.school/courses/short-track">
+          <img src="images/rss-logo.c19ce1b4.svg" class="rss-logo" alt="RS School logo">
+        </a>
+        <p>
+          &copy;2026 <a href="https://github.com/stsTom">Stsiapan Tamilau (@stsTom)</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+  </body>
+</html>
+
