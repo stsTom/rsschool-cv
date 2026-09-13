@@ -8,6 +8,7 @@
   <head>
     <title>Stsiapan Tamilau CV</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
   </head>
   
   <body>
@@ -15,6 +16,7 @@
       <img src="public/DM_Char.png" class="portfolio-img" alt="portfolio portrait">
       <div class="general-info-block">
         <header>
+          <h1>Stsiapan Tamilau</h1>
           <h3>Business Management student at WSB Merito</h3>
           <small>Wrocław, Poland</small>
         </header>
@@ -27,12 +29,18 @@
             gitHub: <a href="https://github.com/stsTom">stsTom</a>
           </span>
         </p>
+
+        <nav>
+          <a href="#summary-section">Summary</a>
+          <a href="#experience-section">Experience</a>
+          <a href="#projects-section">Projects</a>
+        </nav>
       </div>
     </header>
 
     <div class="split-container">
       <section class="main-info-section">
-        <div class="Summary">
+        <div class="Summary" id="summary-section">
           <h2>Summmary</h2>
           
           <p>
@@ -48,26 +56,176 @@
           
         <hr>
 
-        <div class="experience">
+        <div class="experience" id="experience-section">
           <h2>Experience</h2>
           <!--Here is the list of worth checking projects I'd ever been working on
           alongside descriptions of relevant skills gained/used,
           and some code samples-->
 
-          <div class="challenger-exp"></div>
+          <div>
+            <h3>Front-end developer</h3>
+            <small>React, TypeScript, TailwindCSS, ShadcnUI</small>
 
-          <div class="messenger-exp"></div>
+            <ul>
+              <li>
+                <strong>Creating a data-driven UI.</strong>
+                Implemented content rendering based on external configuration files (TS),
+                ensuring easy scalability and project maintenance.
+              </li>
+
+              <li>
+                <strong>App's state management via global storage and contexts.</strong>
+                Handled a complex application state,
+                allowing different elements to access it while maintaining code readability
+                and synchronization with the back-end.
+              </li>
+
+              <li>
+                <strong>Writing tests according to the testing pyramid.</strong>
+                Ensured predictable application behavior through writing unit, integration, and E2E tests
+              </li>
+            </ul>
+          </div>
+
+          <br>
+
+          <div>
+            <h3>AI Engineer</h3>
+            <small>BMAD Method, OpenSpec + Claude Code</small>
+
+            <ul>
+              <li>
+                <strong>AI-Assisted Development.</strong>
+                Implemented an AI-driven workflow utilizing Claude Code and BMAD
+                to automate architecture planning and task breakdown,
+                accelerating the discovery-to-execution pipeline.
+              </li>
+
+              <li>
+                <strong>Spec-Driven Development.</strong>
+                Leveraged OpenSpec alongside Claude Code for spec-based code generation,
+                ensuring precise implementation alignment with project requirements.
+              </li>
+
+              <li>
+                <strong>Prompt Engineering & Workflow Optimization.</strong>
+                Applied multi-model LLMs (Claude, Gemini) for rapid brainstorming,
+                prompt design, and streamlining daily technical tasks.
+              </li>
+            </ul>
+          </div>
+
+          <br>
+
+          <div>
+            <h3>Technical designer, GDSctipt developer</h3>
+            <small>Godot Engine, GDScript, High-level multiplayer API</small>
+
+            <ul>
+              <li>
+                <strong>Prototyping game mechanics.</strong>
+                Implemented a set of core mechanics
+                using object-oriented programming (OOP) principles in GDScript.
+              </li>
+
+              <li>
+                <strong>Creating a dedicated server.</strong>
+                Developed server logic in GDScript,
+                optimizing resource consumption and ensuring stable state synchronization.
+              </li>
+
+              <li>
+                <strong>Developing Client-Server Interaction.</strong>
+                Designed and implemented a data exchange system for multi-user interaction
+                using RPC
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div class="additional-practice">
-          <div class="rss-react-team"></div>
-          
-          <div class="demo-project"></div>
+          <hr>
+
+        <div class="projects">
+          <h2>Projects</h2>
+
+          <div class="projects-container" id="projects-section">
+            <div>
+              <h3>Challenger</h3>
+              <small><em>React + Next.js + TypeScript</em></small>
+              <small>Junior Front-end Developer</small>
+              <a href="https://github.com/apyrkh/challenger">Link</a>
+            </div>
+
+            <div>
+              <h3>Swagger Editor</h3>
+              <small><em>React + TailwindCSS (course final project)</em></small>
+              <small>Teamleader, Editor functionality</small>
+              <a href="https://swagger-editor-nx8kosg0b-sttfs-projects-236fba54.vercel.app/">Deployment</a>
+            </div>
+            
+            <div>
+              <h3>Focus Messenger</h3>
+              <small><em>BMAD, OpenSpec + Claude Code</em></small>
+              <small>AI Engineer</small>
+              <a href="">There was supposed to be a link, but the repo is private at the moment</a>
+            </div>
+
+            <div>
+              <h3>Demo project</h3>
+              <small><em>React + TailwindCSS</em></small>
+              <small>A simple hobby project</small>
+              <a href="https://github.com/stsTom/Press_Kit_Demo">Link</a>
+            </div>
+          </div>
+
+
+          <h3>Code samples</h3>
+          <ul>
+            <li><details>
+              <summary>Understanding of the React principles</summary>
+              <pre><code class="language-javascript">
+useEffect(() => {
+    setIsLoading(true);
+    challengeService
+      .getChallenges()
+      .then((dataPromise) => {
+        if (dataPromise.data.length === 0) {
+          setIsChallengesEmpty(true);
+          return;
+        }
+
+        setIsChallengesEmpty(false);
+        setChallenges(dataPromise.data);
+      })
+      .catch((err) => {
+        setError(err.message || getText("challenges.fetch.unknownError"));
+      })
+      .finally(() => setIsLoading(false));
+  }, []);
+              </code></pre>
+            </details></li>
+
+            <li><details>
+              <summary>Testing skills</summary>
+              <pre><code class="language-javascript">
+describe('Swagger editor utilities', () => {
+  beforeEach(() => {
+    mockValidate.mockReset();
+  });
+
+  describe('convertFormat', () => {
+    it('converts JSON text to YAML text', () => {
+      const result = convertFormat('{"openapi":"3.0.0"}', 'yaml');
+
+      expect(result).toContain('openapi: 3.0.0');
+    });
+              </code></pre>
+            </details></li>
+          </ul>
         </div>
       </section>
 
       <section class="additional-info-section">
-        <!--skills, education, courses-->
         <div class="education">
           <h2>Education</h2>
 
@@ -94,7 +252,7 @@
             </li>
           </ul>
 
-          <h3>Language Certificates</h3>
+          <h3>Other Certificates</h3>
           <ul>
             <li>
               Erasmus+ Youth Exchange “Making ourselves at home”, organized by Kreisau Initiative e.V., 2022
@@ -102,6 +260,70 @@
             
             <li>
               Euroweek - Szkoła Liderów, 2022
+            </li>
+          </ul>
+        </div>
+
+        <hr>
+
+        <div class="skills">
+          <h2>Skills</h2>
+
+          <div>
+            <h3>Hard Skills</h3>
+
+            <ul>
+              <li>
+                Component-based programming
+              </li>
+              
+              <li>
+                Object-oriented programming
+              </li>
+
+              <li>
+                Using Frontend Stack at a Basic Level (React, TypeScript, JavaScript, NextJS)
+              </li>
+
+              <li>
+                Basic understanding of back-end technologies: REST API, Dockerization
+              </li>
+
+              <li>
+                State Management libraries: Zustand, TanStack Query
+              </li>
+
+              <li>
+                Testing tools: RTL, Vitest
+              </li>
+
+              <li>
+                Tools & Environment: Git, GitHub, Vite, npm, VS Code.
+              </li>
+            </ul>
+          </div>
+
+          <h3>Soft skills</h3>
+
+          <ul>
+            <li>
+              Engineering mindset
+            </li>
+
+            <li>
+              Self-management skills
+            </li>
+
+            <li>
+              Interest in learning and self-education
+            </li>
+
+            <li>
+              Adaptability and fast learning
+            </li>
+
+            <li>
+              Strong problem-solving attitude
             </li>
           </ul>
         </div>
@@ -120,7 +342,21 @@
           </ul>
         </div>
       </section>
-    </div>  
+    </div>
+
+    <footer>
+      <div class="footer-container">
+        <a href="https://rs.school/courses/short-track">
+          <img src="public/rss-logo.c19ce1b4.svg" class="rss-logo" alt="RS School logo">
+        </a>
+        <p>
+          ©2026 <a href="https://github.com/stsTom">Stsiapan Tamilau (@stsTom)</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
   </body>
 </html>
 
